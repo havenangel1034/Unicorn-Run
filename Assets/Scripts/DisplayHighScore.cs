@@ -10,7 +10,12 @@ public class DisplayHighScore : MonoBehaviour
 
    public void UpdateHighScoreText()
     {
-        highScoreText.text = $"Highscore: {PlayerPrefs.GetInt("Highscore", 0)}";
+        highScoreText.text = $"Highscore: {PlayerPrefs.GetInt("HighScore", 0)}";
+    }
+
+    private void Start()
+    {
+        UpdateHighScoreText();
     }
 
 }
