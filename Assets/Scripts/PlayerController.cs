@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public bool gameOver;
     public GameManager manager;
     public TextMeshProUGUI gameOverText;
+    bool isJumping;
+    public GameObject restart;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (isJumping && isOnGround)
         { 
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
             isOnGround = false;
@@ -49,10 +53,16 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             gameOverText.gameObject.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(restart);
         }
         if(other.gameObject.CompareTag("Score Trigger"))
         {
             manager.AddScore();
         }
+    }
+
+    public void OnJump(InputValue value)
+    {
+        isJumping = value.isPressed;
     }
 }
