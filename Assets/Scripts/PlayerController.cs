@@ -65,4 +65,10 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = value.isPressed;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(transform.position, transform.forward * 500f);
+    }
 }
