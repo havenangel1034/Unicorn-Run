@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6892564992365619257}
   - component: {fileID: 3915027181179748453}
+  - component: {fileID: 8657493783372400494}
   m_Layer: 0
   m_Name: ScoreTrigger
   m_TagString: Score Trigger
@@ -49,10 +50,31 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 3.786724
+  m_Center: {x: 0, y: 5, z: 0}
+--- !u!65 &8657493783372400494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980765036800602311}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5697408
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 12.496566, y: 7.5154085, z: 1}
+  m_Center: {x: 0.073559955, y: 11.257713, z: 0}
 --- !u!1 &1506285871748202189
 GameObject:
   m_ObjectHideFlags: 0
