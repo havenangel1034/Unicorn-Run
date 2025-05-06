@@ -66,6 +66,11 @@ public class PlayerController : MonoBehaviour
         isJumping = value.isPressed;
     }
 
+    public void JumpInput(bool value)
+    {
+        isJumping = value;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
