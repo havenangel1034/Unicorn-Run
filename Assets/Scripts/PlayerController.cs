@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     bool isJumping;
     public GameObject restart;
+    public PauseMenu pauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,11 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputValue value)
     {
         isJumping = value.isPressed;
+    }
+
+    public void OnPause(InputValue value)
+    {
+        pauseMenu.PauseGame();
     }
 
     public void JumpInput(bool value)
